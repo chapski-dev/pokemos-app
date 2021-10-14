@@ -1,0 +1,19 @@
+import { useContext } from 'react';
+import { UserContext } from '../../../context/userContext';
+import PageWrapper from './../../wrappers/PageWrapper/index';
+
+const Dashboard = () => {
+  const {user} = useContext(UserContext);
+  return (
+    <PageWrapper>
+      <div className="dashboard-page">
+        <h1>Dashboard</h1>
+        <div>
+          Hello, {user?.lastName} {user?.firstName} ({user?.roles.join(',')})
+        </div>
+      </div>
+    </PageWrapper>
+  )
+}
+
+export default Dashboard;
